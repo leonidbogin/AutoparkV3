@@ -1,6 +1,6 @@
 ﻿namespace AutoparkV3.Enums
 {
-    enum Color
+    public enum Color
     {
         White,
         Black,

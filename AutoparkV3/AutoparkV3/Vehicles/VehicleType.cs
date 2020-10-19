@@ -1,4 +1,6 @@
-﻿namespace AutoparkV3
+﻿using System;
+
+namespace AutoparkV3.Vehicles
 {
     public class VehicleType
     {
@@ -12,5 +14,14 @@
             TypeName = typeName;
             TaxCoefficient = taxCoefficient;
         }
+
+        public void Display()
+        {
+            Console.WriteLine($" TypeName = {TypeName};");
+            Console.WriteLine($" TaxCoefficient = {TaxCoefficient};");
+            Console.WriteLine();
+        }
+
+        public override string ToString() => $"{TypeName};{TaxCoefficient}";
     }
 }

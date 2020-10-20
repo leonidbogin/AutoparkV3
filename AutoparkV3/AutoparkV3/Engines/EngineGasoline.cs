@@ -6,19 +6,25 @@ using System.Threading.Tasks;
 
 namespace AutoparkV3.Engines
 {
-    public class EngineGasoline : AbstractEngineCombustion
+    public class EngineGasoline : EngineCE
     {
         public EngineGasoline()
         {
-            TypeName = "Gasoline";
+            Init();
         }
 
-        public EngineGasoline(float fuelConsumptionPer100, float engineCapacity, int fuelTankCapacity)
+        public EngineGasoline(float engineCapacity, float fuelConsumptionPer100, int fuelTankCapacity)
+        {
+            Init();
+            EngineCapacity = engineCapacity;
+            FuelConsumptionPer100 = fuelConsumptionPer100;
+            FuelTankCapacity = fuelTankCapacity;
+        }
+
+        private void Init()
         {
             TypeName = "Gasoline";
-            FuelConsumptionPer100 = fuelConsumptionPer100;
-            EngineCapacity = engineCapacity;
-            FuelTankCapacity = fuelTankCapacity;
+            TaxCoefficient = 1;
         }
     }
 }

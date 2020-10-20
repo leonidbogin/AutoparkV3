@@ -6,25 +6,30 @@ using System.Threading.Tasks;
 
 namespace AutoparkV3.Engines
 {
-    public class EngineElectrical : AbstractEngine
+    public class EngineElectrical : Engine
     {
         public float ElectricityConsumption { get; set; }           //kW
         public float BatterySize { get; set; }                      //kWh
 
         public EngineElectrical()
         {
-            TypeName = "Electrical";
-            TaxCoefficient = 0.1f;
+            Init();
         }
 
         public EngineElectrical(float electricityConsumption, float batterySize)
         {
-            TypeName = "Electrical";
+            Init();
             ElectricityConsumption = electricityConsumption;
             BatterySize = batterySize;
         }
 
-        public override float GetMaxKilometersOnOneTank()
+        private void Init()
+        {
+            TypeName = "Electrical";
+            TaxCoefficient = 0.1f;
+        }
+
+        public float GetMaxKilometers()
         {
             return BatterySize / ElectricityConsumption;
         }

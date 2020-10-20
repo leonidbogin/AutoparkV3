@@ -12,7 +12,7 @@ namespace AutoparkV3.Vehicles
     public class Vehicle : IComparable<Vehicle>
     {
         public VehicleType Type { get; set; }
-        public AbstractEngine Engine { get; set; }
+        public Engine Engine { get; set; }
         public string ModelName { get; set; }
         public string RegistrationNumber { get; set; }
         public int Weight { get; set; }                    //Kg
@@ -22,11 +22,11 @@ namespace AutoparkV3.Vehicles
 
         public Vehicle() { }
 
-        public Vehicle(VehicleType type, AbstractEngine engine, string modelName,
+        public Vehicle(VehicleType type, Engine engine, string modelName,
             string registrationNumber, int weight, int yearManufacture, int? mileage, Color color) 
         {
             Type = type;
-            Engine = engine;
+            Engine = engine;  
             ModelName = modelName;
             RegistrationNumber = registrationNumber;
             Weight = weight;
@@ -42,9 +42,22 @@ namespace AutoparkV3.Vehicles
             else return 0;
         }
 
+        public override bool Equals(object obj)
+        {
+            Vehicle second = (Vehicle)obj;
+            if (ModelName.Equals(second.ModelName)
+                && Type.Equals(second.Type))
+            {
+                return true;
+            }
+            else return false;
+        }
+
         public float GetCalcTaxPerMonth()
         {
-            return (Weight * 0.0013f) + (Type.TaxCoefficient * Engine.TaxCoefficient * 30) + 5;
+            //return (Weight * 0.0013f) + (Type.TaxCoefficient * Engine.TaxCoefficient * 30) + 5;
+            return (Weight * 0.0013f) + (Type.TaxCoefficient * 30) + 5;
+
         }
 
         public override string ToString() => $"{Type.TypeName};" +
@@ -54,7 +67,7 @@ namespace AutoparkV3.Vehicles
             $"{(Mileage.HasValue ? Mileage.Value.ToString() : "none")};" +
             $"{Weight};" +
             $"{YearManufacture};" +
-            $"{Engine.TypeName};" +
-            string.Format(CultureInfo.InvariantCulture, "{0:0.00}", GetCalcTaxPerMonth());
+            //$"{Engine.TypeName};" +
+            GetCalcTaxPerMonth().ToString("0.00");
     }
 }

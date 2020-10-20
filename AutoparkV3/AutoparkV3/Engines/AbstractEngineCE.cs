@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace AutoparkV3.Engines
 
 {
-    public abstract class AbstractEngineCombustion : AbstractEngine
+    public abstract class AbstractEngineCE : AbstractEngine
     {
         public float FuelConsumptionPer100 { get; set; }
         public float EngineCapacity { get; set; }

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace AutoparkV3.Engines
 {
-    public abstract class AbstractEngine
+    public class Engine
     {
         public string TypeName { get; set; }
         public string ModelName { get; set; }
         public float TaxCoefficient { get; set; }
 
-        public abstract float GetMaxKilometers();
+        //public abstract float GetMaxKilometersOnOneTank();
     }
 }

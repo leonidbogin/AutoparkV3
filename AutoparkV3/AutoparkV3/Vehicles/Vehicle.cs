@@ -17,13 +17,13 @@ namespace AutoparkV3.Vehicles
         public string RegistrationNumber { get; set; }
         public int Weight { get; set; }                    //Kg
         public int YearManufacture { get; set; }           //Year
-        public int? Mileage { get; set; }                  //Km
+        public int Mileage { get; set; }                  //Km
         public Color Color { get; set; }                   //Enums.Color
 
         public Vehicle() { }
 
         public Vehicle(VehicleType type, Engine engine, string modelName,
-            string registrationNumber, int weight, int yearManufacture, int? mileage, Color color) 
+            string registrationNumber, int weight, int yearManufacture, int mileage, Color color) 
         {
             Type = type;
             Engine = engine;  
@@ -53,16 +53,16 @@ namespace AutoparkV3.Vehicles
             else return false;
         }
 
-        public float GetCalcTaxPerMonth()
+        public double GetCalcTaxPerMonth()
         {
-            return (Weight * 0.0013f) + (Type.TaxCoefficient * Engine.TaxCoefficient * 30) + 5;
+            return (Weight * 0.0013) + (Type.TaxCoefficient * Engine.TaxCoefficient * 30) + 5;
         }
 
         public override string ToString() => $"{Type.TypeName};" +
             $"{ModelName};" +
             $"{RegistrationNumber ?? "none"};" +
             $"{Color};" +
-            $"{(Mileage.HasValue ? Mileage.Value.ToString() : "none")};" +
+            $"{Mileage};" +
             $"{Weight};" +
             $"{YearManufacture};" +
             GetCalcTaxPerMonth().ToString("0.00");

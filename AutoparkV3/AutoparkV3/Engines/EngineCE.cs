@@ -3,11 +3,11 @@
 {
     public class EngineCE : Engine
     {
-        public float EngineCapacity { get; set; }
-        public float FuelConsumptionPer100 { get; set; }
+        public double EngineCapacity { get; set; }
+        public double FuelConsumptionPer100 { get; set; }
         public int FuelTankCapacity { get; set; }
 
-        public float GetMaxKilometers()
+        public double GetMaxKilometers()
         {
             return FuelTankCapacity * 100 / FuelConsumptionPer100;
         }

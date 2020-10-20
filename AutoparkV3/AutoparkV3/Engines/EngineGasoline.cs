@@ -7,7 +7,7 @@
             Init();
         }
 
-        public EngineGasoline(float engineCapacity, float fuelConsumptionPer100, int fuelTankCapacity)
+        public EngineGasoline(double engineCapacity, double fuelConsumptionPer100, int fuelTankCapacity)
         {
             Init();
             EngineCapacity = engineCapacity;

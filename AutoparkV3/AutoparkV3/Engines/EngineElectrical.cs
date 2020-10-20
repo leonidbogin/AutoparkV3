@@ -2,15 +2,15 @@
 {
     public class EngineElectrical : Engine
     {
-        public float ElectricityConsumption { get; set; }           //kW
-        public float BatterySize { get; set; }                      //kWh
+        public double ElectricityConsumption { get; set; }           //kW
+        public double BatterySize { get; set; }                      //kWh
 
         public EngineElectrical()
         {
             Init();
         }
 
-        public EngineElectrical(float electricityConsumption, float batterySize)
+        public EngineElectrical(double electricityConsumption, double batterySize)
         {
             Init();
             ElectricityConsumption = electricityConsumption;
@@ -20,10 +20,10 @@
         private void Init()
         {
             TypeName = "Electrical";
-            TaxCoefficient = 0.1f;
+            TaxCoefficient = 0.1;
         }
 
-        public float GetMaxKilometers()
+        public double GetMaxKilometers()
         {
             return BatterySize / ElectricityConsumption;
         }

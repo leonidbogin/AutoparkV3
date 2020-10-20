@@ -4,6 +4,6 @@
     {
         public string TypeName { get; set; }
         public string ModelName { get; set; }
-        public float TaxCoefficient { get; set; }
+        public double TaxCoefficient { get; set; }
     }
 }

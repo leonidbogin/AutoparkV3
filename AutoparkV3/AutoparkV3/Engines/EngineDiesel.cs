@@ -7,7 +7,7 @@
             Init();
         }
 
-        public EngineDiesel(float engineCapacity, float fuelConsumptionPer100, int fuelTankCapacity)
+        public EngineDiesel(double engineCapacity, double fuelConsumptionPer100, int fuelTankCapacity)
         {
             Init();
             EngineCapacity = engineCapacity;
@@ -18,7 +18,7 @@
         private void Init()
         {
             TypeName = "Diesel";
-            TaxCoefficient = 1.2f;
+            TaxCoefficient = 1.2;
         }
     }
 }

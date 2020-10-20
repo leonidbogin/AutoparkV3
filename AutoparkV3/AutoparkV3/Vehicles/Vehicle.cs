@@ -11,19 +11,25 @@ namespace AutoparkV3.Vehicles
 {
     public class Vehicle : IComparable<Vehicle>
     {
+        public int VehicleId { get; set; }
         public VehicleType Type { get; set; }
         public AbstractEngine Engine { get; set; }
         public string ModelName { get; set; }
         public string RegistrationNumber { get; set; }
         public int Weight { get; set; }                    //Kg
         public int YearManufacture { get; set; }           //Year
-        public int? Mileage { get; set; }                  //Km
+        public int Mileage { get; set; }                  //Km
         public Color Color { get; set; }                   //Enums.Color
 
-        public Vehicle() { }
+        private List<Rent> rents;
+
+        public Vehicle() 
+        {
+            rents = new List<Rent>();
+        }
 
         public Vehicle(VehicleType type, AbstractEngine engine, string modelName,
-            string registrationNumber, int weight, int yearManufacture, int? mileage, Color color) 
+            string registrationNumber, int weight, int yearManufacture, int mileage, Color color) 
         {
             Type = type;
             Engine = engine;  
@@ -33,6 +39,12 @@ namespace AutoparkV3.Vehicles
             YearManufacture = yearManufacture;
             Mileage = mileage;
             Color = color;
+            rents = new List<Rent>();
+        }
+
+        public void RentAdd(DateTime date, float rentCost)
+        {
+            rents.Add(new Rent(date, rentCost));
         }
 
         public int CompareTo(Vehicle second)
@@ -53,19 +65,31 @@ namespace AutoparkV3.Vehicles
             else return false;
         }
 
+        public float GetTotalIncome()
+        {
+            float sum = 0;
+            foreach (var rent in rents)
+                sum += rent.RentCost;
+            return sum;
+        }
+
         public float GetCalcTaxPerMonth()
         {
             return (Weight * 0.0013f) + (Type.TaxCoefficient * Engine.TaxCoefficient * 30) + 5;
+        }
+
+        public float GetTotalProfit()
+        {
+            return GetTotalIncome() - GetCalcTaxPerMonth();
         }
 
         public override string ToString() => $"{Type.TypeName};" +
             $"{ModelName};" +
             $"{RegistrationNumber ?? "none"};" +
             $"{Color};" +
-            $"{(Mileage.HasValue ? Mileage.Value.ToString() : "none")};" +
+            $"{Mileage};" +
             $"{Weight};" +
             $"{YearManufacture};" +
-            //$"{Engine.TypeName};" +
             GetCalcTaxPerMonth().ToString("0.00");
     }
 }

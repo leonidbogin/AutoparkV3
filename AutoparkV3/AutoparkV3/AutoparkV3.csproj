@@ -51,7 +51,10 @@
     <Compile Include="Engines\EngineGasoline.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rent.cs" />
     <Compile Include="Vehicles\Vehicle.cs" />
+    <Compile Include="Vehicles\Collections.cs" />
+    <Compile Include="Vehicles\VehicleComparer.cs" />
     <Compile Include="Vehicles\VehicleType.cs" />
   </ItemGroup>
   <ItemGroup>

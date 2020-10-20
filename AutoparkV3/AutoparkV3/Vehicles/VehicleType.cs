@@ -4,6 +4,7 @@ namespace AutoparkV3.Vehicles
 {
     public class VehicleType
     {
+        public int TypeId { get; set; }
         public string TypeName { get; set; }
         public float TaxCoefficient { get; set; }
 

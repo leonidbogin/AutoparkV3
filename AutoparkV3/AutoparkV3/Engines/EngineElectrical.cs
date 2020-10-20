@@ -8,15 +8,15 @@ namespace AutoparkV3.Engines
 {
     public class EngineElectrical : AbstractEngine
     {
-        public float ElectricityConsumption { get; set; }           //kW
-        public float BatterySize { get; set; }                      //kWh
+        public double ElectricityConsumption { get; set; }           //kW
+        public double BatterySize { get; set; }                      //kWh
 
         public EngineElectrical()
         {
             Init();
         }
 
-        public EngineElectrical(float electricityConsumption, float batterySize)
+        public EngineElectrical(double electricityConsumption, double batterySize)
         {
             Init();
             ElectricityConsumption = electricityConsumption;
@@ -26,10 +26,10 @@ namespace AutoparkV3.Engines
         private void Init()
         {
             TypeName = "Electrical";
-            TaxCoefficient = 0.1f;
+            TaxCoefficient = 0.1;
         }
 
-        public override float GetMaxKilometers()
+        public override double GetMaxKilometers()
         {
             return BatterySize / ElectricityConsumption;
         }

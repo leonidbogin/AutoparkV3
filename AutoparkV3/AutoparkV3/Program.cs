@@ -19,7 +19,7 @@ namespace AutoparkV3
             {
                 VehicleId = 1,
                 Type = collection.Types.Find(e => e.TypeId == 2),
-                Engine = new EngineDiesel(5.1f, 2.0f, 57), 
+                Engine = new EngineDiesel(5.1, 2, 57), 
                 ModelName = "Land Rover Sport II", 
                 RegistrationNumber = "0044 AX-7", 
                 Weight = 2500,

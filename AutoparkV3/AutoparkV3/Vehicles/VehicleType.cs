@@ -6,11 +6,11 @@ namespace AutoparkV3.Vehicles
     {
         public int TypeId { get; set; }
         public string TypeName { get; set; }
-        public float TaxCoefficient { get; set; }
+        public double TaxCoefficient { get; set; }
 
         public VehicleType() { }
 
-        public VehicleType(string typeName, float taxCoefficient = 1.0f) 
+        public VehicleType(string typeName, double taxCoefficient = 1) 
         {
             TypeName = typeName;
             TaxCoefficient = taxCoefficient;

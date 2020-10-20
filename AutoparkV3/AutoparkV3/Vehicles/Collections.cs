@@ -124,9 +124,9 @@ namespace AutoparkV3.Vehicles
             else return -1;
         }
 
-        public float SumTotalProfit()
+        public double SumTotalProfit()
         {
-            float sumCosts = 0;
+            double sumCosts = 0;
             foreach (Vehicle vehicle in Vehicles)
                 sumCosts += vehicle.GetTotalProfit();
             return sumCosts;
@@ -134,7 +134,7 @@ namespace AutoparkV3.Vehicles
 
         public void Print()
         {
-            const string format = "{0,-5}{1,-10}{2,-22}{3,-15}{4,-15}{5,-7}{6,-10}{7,-8}{8,-8}{9,-8}{10,-8}";
+            const string format = "{0,-5}{1,-10}{2,-22}{3,-15}{4,-15}{5,-7}{6,-10}{7,-8}{8,-8}{9,-8}{10,-8:0.00}";
             Console.WriteLine(string.Format(" " + format,
                 "Id","Type","ModelName","Number","Weight (kg)","Year","Mileage","Color","Income","Tax","Profit"));
             foreach (Vehicle vehicle in Vehicles)

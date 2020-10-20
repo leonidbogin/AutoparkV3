@@ -13,7 +13,7 @@ namespace AutoparkV3.Engines
             Init();
         }
 
-        public EngineDiesel(float engineCapacity, float fuelConsumptionPer100, int fuelTankCapacity)
+        public EngineDiesel(double engineCapacity, double fuelConsumptionPer100, int fuelTankCapacity)
         {
             Init();
             EngineCapacity = engineCapacity;
@@ -24,7 +24,7 @@ namespace AutoparkV3.Engines
         private void Init()
         {
             TypeName = "Diesel";
-            TaxCoefficient = 1.2f;
+            TaxCoefficient = 1.2;
         }
     }
 }

@@ -10,14 +10,14 @@ namespace AutoparkV3
     public class Rent
     {
         public DateTime Date { get; set; }
-        public float RentCost { get; set; }
+        public double RentCost { get; set; }
 
         public Rent()
         {
 
         }
 
-        public Rent(DateTime date, float rentCost)
+        public Rent(DateTime date, double rentCost)
         {
             Date = date;
             RentCost = rentCost;

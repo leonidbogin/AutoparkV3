@@ -18,7 +18,7 @@ namespace AutoparkV3.Vehicles
         public string RegistrationNumber { get; set; }
         public int Weight { get; set; }                    //Kg
         public int YearManufacture { get; set; }           //Year
-        public int Mileage { get; set; }                  //Km
+        public int Mileage { get; set; }                   //Km
         public Color Color { get; set; }                   //Enums.Color
 
         private List<Rent> rents;
@@ -42,7 +42,7 @@ namespace AutoparkV3.Vehicles
             rents = new List<Rent>();
         }
 
-        public void RentAdd(DateTime date, float rentCost)
+        public void RentAdd(DateTime date, double rentCost)
         {
             rents.Add(new Rent(date, rentCost));
         }
@@ -65,20 +65,20 @@ namespace AutoparkV3.Vehicles
             else return false;
         }
 
-        public float GetTotalIncome()
+        public double GetTotalIncome()
         {
-            float sum = 0;
+            double sum = 0;
             foreach (var rent in rents)
                 sum += rent.RentCost;
             return sum;
         }
 
-        public float GetCalcTaxPerMonth()
+        public double GetCalcTaxPerMonth()
         {
-            return (Weight * 0.0013f) + (Type.TaxCoefficient * Engine.TaxCoefficient * 30) + 5;
+            return (Weight * 0.0013) + (Type.TaxCoefficient * Engine.TaxCoefficient * 30) + 5;
         }
 
-        public float GetTotalProfit()
+        public double GetTotalProfit()
         {
             return GetTotalIncome() - GetCalcTaxPerMonth();
         }

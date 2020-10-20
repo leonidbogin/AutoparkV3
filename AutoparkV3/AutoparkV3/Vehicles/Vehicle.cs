@@ -34,7 +34,7 @@ namespace AutoparkV3.Vehicles
             else return 0;
         }
 
-        public float GetCalcTaxPerMonth()
+        public double GetCalcTaxPerMonth()
         {
             return (Weight * 0.0013f) + (Type.TaxCoefficient * 30) + 5;
         }

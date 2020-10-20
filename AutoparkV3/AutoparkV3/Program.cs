@@ -10,10 +10,10 @@ namespace AutoparkV3
         {
             VehicleType[] types = new VehicleType[]
             {
-                new VehicleType("Bus", 1.2f),
+                new VehicleType("Bus", 1.2),
                 new VehicleType("Car"),
-                new VehicleType("Rink", 1.5f),
-                new VehicleType("Tractor", 1.2f)
+                new VehicleType("Rink", 1.5),
+                new VehicleType("Tractor", 1.2)
             };
 
             Vehicle[] vehicles = new Vehicle[]
@@ -39,7 +39,7 @@ namespace AutoparkV3
             for (int i = 1; i < vehicles.Length; i++)
                 if (vehicles[maxTaxIndex].GetCalcTaxPerMonth() < vehicles[i].GetCalcTaxPerMonth())
                     maxTaxIndex = i;
-            Console.WriteLine($"\nMaximum tax = {vehicles[maxTaxIndex].GetCalcTaxPerMonth()}");
+            Console.WriteLine($"\nMaximum tax = {vehicles[maxTaxIndex].GetCalcTaxPerMonth():0.00}");
 
             Console.ReadLine();
         }

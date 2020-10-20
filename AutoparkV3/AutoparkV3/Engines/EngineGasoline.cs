@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoparkV3.Engines
 {
-    public class EngineGasoline : EngineCE
+    public class EngineGasoline : AbstractEngineCE
     {
         public EngineGasoline()
         {

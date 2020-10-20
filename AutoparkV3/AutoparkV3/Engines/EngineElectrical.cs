@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AutoparkV3.Engines
 {
-    public class EngineElectrical : Engine
+    public class EngineElectrical : AbstractEngine
     {
         public float ElectricityConsumption { get; set; }           //kW
         public float BatterySize { get; set; }                      //kWh
@@ -29,7 +29,7 @@ namespace AutoparkV3.Engines
             TaxCoefficient = 0.1f;
         }
 
-        public float GetMaxKilometers()
+        public override float GetMaxKilometers()
         {
             return BatterySize / ElectricityConsumption;
         }

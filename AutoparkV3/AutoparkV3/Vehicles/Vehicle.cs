@@ -12,7 +12,7 @@ namespace AutoparkV3.Vehicles
     public class Vehicle : IComparable<Vehicle>
     {
         public VehicleType Type { get; set; }
-        public Engine Engine { get; set; }
+        public AbstractEngine Engine { get; set; }
         public string ModelName { get; set; }
         public string RegistrationNumber { get; set; }
         public int Weight { get; set; }                    //Kg
@@ -22,7 +22,7 @@ namespace AutoparkV3.Vehicles
 
         public Vehicle() { }
 
-        public Vehicle(VehicleType type, Engine engine, string modelName,
+        public Vehicle(VehicleType type, AbstractEngine engine, string modelName,
             string registrationNumber, int weight, int yearManufacture, int? mileage, Color color) 
         {
             Type = type;
@@ -55,9 +55,7 @@ namespace AutoparkV3.Vehicles
 
         public float GetCalcTaxPerMonth()
         {
-            //return (Weight * 0.0013f) + (Type.TaxCoefficient * Engine.TaxCoefficient * 30) + 5;
-            return (Weight * 0.0013f) + (Type.TaxCoefficient * 30) + 5;
-
+            return (Weight * 0.0013f) + (Type.TaxCoefficient * Engine.TaxCoefficient * 30) + 5;
         }
 
         public override string ToString() => $"{Type.TypeName};" +

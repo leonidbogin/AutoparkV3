@@ -43,8 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Engines\EngineCE.cs" />
-    <Compile Include="Engines\Engine.cs" />
     <Compile Include="Engines\AbstractEngine.cs" />
     <Compile Include="Engines\EngineDiesel.cs" />
     <Compile Include="Engines\EngineElectrical.cs" />

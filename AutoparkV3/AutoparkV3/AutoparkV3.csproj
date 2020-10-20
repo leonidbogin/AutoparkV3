@@ -43,17 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Engines\EngineCE.cs" />
-    <Compile Include="Engines\Engine.cs" />
-    <Compile Include="Engines\AbstractEngine.cs" />
-    <Compile Include="Engines\EngineDiesel.cs" />
-    <Compile Include="Engines\EngineElectrical.cs" />
-    <Compile Include="Enums\Color.cs" />
-    <Compile Include="Engines\AbstractEngineCE.cs" />
-    <Compile Include="Engines\EngineGasoline.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vehicles\Vehicle.cs" />
     <Compile Include="Vehicles\VehicleType.cs" />
   </ItemGroup>
   <ItemGroup>

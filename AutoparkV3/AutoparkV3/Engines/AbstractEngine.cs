@@ -10,8 +10,8 @@ namespace AutoparkV3.Engines
     {
         public string TypeName { get; set; }
         public string ModelName { get; set; }
-        public float TaxCoefficient { get; set; }
+        public double TaxCoefficient { get; set; }
 
-        public abstract float GetMaxKilometers();
+        public abstract double GetMaxKilometers();
     }
 }

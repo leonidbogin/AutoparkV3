@@ -9,16 +9,16 @@ namespace AutoparkV3
         {
             VehicleType[] types = new VehicleType[]
             {
-                new VehicleType("Bus", 1.2f),
+                new VehicleType("Bus", 1.2),
                 new VehicleType("Car"),
-                new VehicleType("Rink", 1.5f),
-                new VehicleType("Tractor", 1.2f)
+                new VehicleType("Rink", 1.5),
+                new VehicleType("Tractor", 1.2)
             };
 
-            types[types.Length - 1].TaxCoefficient = 1.3f;
+            types[types.Length - 1].TaxCoefficient = 1.3;
 
             int maxTaxIndex = 0;
-            float averageTax = 0;
+            double averageTax = 0;
 
             Console.WriteLine("Display types:");
             for (int i = 0; i < types.Length; i++)

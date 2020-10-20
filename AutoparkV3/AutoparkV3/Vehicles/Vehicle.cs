@@ -55,9 +55,7 @@ namespace AutoparkV3.Vehicles
 
         public float GetCalcTaxPerMonth()
         {
-            //return (Weight * 0.0013f) + (Type.TaxCoefficient * Engine.TaxCoefficient * 30) + 5;
-            return (Weight * 0.0013f) + (Type.TaxCoefficient * 30) + 5;
-
+            return (Weight * 0.0013f) + (Type.TaxCoefficient * Engine.TaxCoefficient * 30) + 5;
         }
 
         public override string ToString() => $"{Type.TypeName};" +
@@ -67,7 +65,6 @@ namespace AutoparkV3.Vehicles
             $"{(Mileage.HasValue ? Mileage.Value.ToString() : "none")};" +
             $"{Weight};" +
             $"{YearManufacture};" +
-            //$"{Engine.TypeName};" +
             GetCalcTaxPerMonth().ToString("0.00");
     }
 }

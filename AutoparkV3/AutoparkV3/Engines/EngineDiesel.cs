@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace AutoparkV3.Engines
+﻿namespace AutoparkV3.Engines
 {
-    public class EngineDiesel : AbstractEngineCE
+    public class EngineDiesel : EngineCE
     {
         public EngineDiesel()
         {

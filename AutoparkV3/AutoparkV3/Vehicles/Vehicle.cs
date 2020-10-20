@@ -36,7 +36,7 @@ namespace AutoparkV3.Vehicles
 
         public double GetCalcTaxPerMonth()
         {
-            return (Weight * 0.0013f) + (Type.TaxCoefficient * 30) + 5;
+            return (Weight * 0.0013) + (Type.TaxCoefficient * 30) + 5;
         }
 
         public override string ToString() => $"{Type.TypeName};" +
